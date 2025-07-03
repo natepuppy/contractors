@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import Button from '../components/Button';
 import Section from '../components/Section';
 import SectionHeading from '../components/SectionHeading';
-import TestComponent from '../components/TestComponent';
 
 const HomePage = () => {
   return (
@@ -12,9 +11,6 @@ const HomePage = () => {
         <meta name="description" content="Hire top overseas engineers by the hour or project — fully vetted, flexible, and reliable. Get Silicon Valley-quality engineering at 1/3 the cost." />
         <meta name="keywords" content="hire offshore developers, remote software engineers, contract software engineers, developer staffing agency" />
       </Helmet>
-
-      {/* Test Component */}
-      <TestComponent />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
