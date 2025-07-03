@@ -340,7 +340,7 @@ const ServicesPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to discuss your needs?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">Contact us today to learn more about our services and how we can help you achieve your goals.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/contact" variant="primary" className="bg-white text-blue-600 hover:bg-gray-100">
+            <Button to="/contact" className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700">
               Schedule a Consultation
             </Button>
             <Button to="/how-it-works" variant="outline" className="border-white text-white hover:bg-white hover:bg-opacity-10">

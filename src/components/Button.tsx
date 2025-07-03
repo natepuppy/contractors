@@ -24,12 +24,12 @@ const Button = ({
   onClick,
   disabled = false,
 }: ButtonProps) => {
-  const baseClasses = 'inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
+  const baseClasses = 'inline-flex items-center justify-center px-6 py-3 font-medium rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
   
   const variantClasses = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white',
-    secondary: 'bg-gray-100 hover:bg-gray-200 text-gray-800',
-    outline: 'border border-blue-600 text-blue-600 hover:bg-blue-50',
+    primary: 'bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg',
+    secondary: 'bg-gray-100 hover:bg-gray-200 text-gray-800 shadow-md hover:shadow-lg',
+    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700',
   };
 
   const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : '';

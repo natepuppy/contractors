@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +7,11 @@ type MainLayoutProps = {
 };
 
 const MainLayout = ({ children }: MainLayoutProps) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white shadow-sm sticky top-0 z-10">
+      <header className="bg-white shadow-md sticky top-0 z-50 backdrop-blur-sm bg-white/95">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-blue-600">
             DevTalent
@@ -31,8 +34,10 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             </Link>
           </nav>
           <div className="md:hidden">
-            {/* Mobile menu button - would implement with useState toggle */}
-            <button className="text-gray-500 hover:text-blue-600">
+            <button 
+              className="text-gray-500 hover:text-blue-600"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
@@ -47,6 +52,56 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             </Link>
           </div>
         </div>
+        
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 py-4">
+            <div className="container mx-auto px-4 flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/how-it-works" 
+                className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                How It Works
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                to="/about" 
+                className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium text-center mt-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book a Call
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="flex-grow">

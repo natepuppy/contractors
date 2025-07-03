@@ -226,7 +226,7 @@ const HowItWorksPage = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
           <p className="text-xl mb-8">Schedule a free consultation to discuss your needs and see how we can help.</p>
-          <Button to="/contact" variant="primary" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button to="/contact" className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700">
             Request a Consultation
           </Button>
         </div>
